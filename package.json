@@ -1,23 +1,53 @@
 {
-  "name": "template-solidjs-library",
+  "name": "@dschz/solid-highcharts",
   "version": "0.0.0",
-  "description": "Template for SolidJS library using tsup for bundling. Configured with Bun, NVM, TypeScript, ESLint, Prettier, Vitest, and GHA",
+  "description": "SolidJS wrapper for Highcharts",
   "type": "module",
   "author": "Daniel Sanchez <dsanc89@icloud.com>",
   "license": "MIT",
-  "homepage": "https://github.com/thedanchez/template-solidjs-library#readme",
+  "homepage": "https://github.com/dsnchz/solid-highcharts#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thedanchez/template-solidjs-library.git"
+    "url": "https://github.com/dsnchz/solid-highcharts.git"
   },
   "bugs": {
-    "url": "https://github.com/thedanchez/template-solidjs-library/issues"
+    "url": "https://github.com/dsnchz/solid-highcharts/issues"
   },
   "publishConfig": {
     "access": "public"
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "accessibility",
+    "candlestick",
+    "chart",
+    "charts",
+    "component",
+    "data-visualization",
+    "financial-charts",
+    "gantt",
+    "graph",
+    "highcharts",
+    "highmaps",
+    "map",
+    "map-chart",
+    "maps",
+    "project-management",
+    "reactive",
+    "solid",
+    "solid-component",
+    "solid-js",
+    "solidjs",
+    "stock",
+    "stock-chart",
+    "stockcharts",
+    "time-series",
+    "timeseries",
+    "typescript",
+    "visualization",
+    "wrapper"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -63,6 +93,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-solid": "^0.14.5",
     "globals": "^16.1.0",
+    "highcharts": "^12.2.0",
     "jiti": "^2.4.2",
     "jsdom": "^26.1.0",
     "prettier": "^3.5.3",
@@ -77,6 +108,7 @@
     "vitest": "^3.1.3"
   },
   "peerDependencies": {
+    "highcharts": ">=12.0.0",
     "solid-js": ">=1.6.0"
   }
 }
