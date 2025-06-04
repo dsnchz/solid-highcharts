@@ -1,5 +1,11 @@
 # @dschz/solid-highcharts
 
+## 0.1.1
+
+### Patch Changes
+
+- fixes readme typo
+
 ## 0.1.0 (2025-06-04)
 
 ### 🎉 Initial Release

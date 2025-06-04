@@ -1,6 +1,6 @@
 {
   "name": "@dschz/solid-highcharts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SolidJS wrapper for Highcharts",
   "type": "module",
   "author": "Daniel Sanchez <dsanc89@icloud.com>",
