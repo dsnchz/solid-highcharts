@@ -328,4 +328,4 @@ bun start
 
 ## 📄 License
 
-MIT © [David Sanchez](https://github.com/dsnchz)
+MIT © [Daniel Sanchez](https://github.com/dsnchz)
