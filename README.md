@@ -8,6 +8,7 @@
 [![Highcharts](https://img.shields.io/badge/highcharts-12.0.0+-orange?style=flat-square)](https://github.com/highcharts/highcharts)
 [![npm version](https://img.shields.io/npm/v/@dschz/solid-highcharts?color=blue)](https://www.npmjs.com/package/@dschz/solid-highcharts)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/@dschz/solid-highcharts)](https://bundlephobia.com/package/@dschz/solid-highcharts)
+[![JSR](https://jsr.io/badges/@dschz/solid-highcharts/score)](https://jsr.io/@dschz/solid-highcharts)
 [![CI](https://github.com/dsnchz/solid-highcharts/actions/workflows/ci.yaml/badge.svg)](https://github.com/dsnchz/solid-highcharts/actions/workflows/ci.yaml)
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white)](https://discord.gg/yVBGJfTfQy)
 
