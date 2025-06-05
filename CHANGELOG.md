@@ -1,5 +1,11 @@
 # @dschz/solid-highcharts
 
+## 0.1.2
+
+### Patch Changes
+
+- adds jsr score badge to readme
+
 ## 0.1.1
 
 ### Patch Changes
