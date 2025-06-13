@@ -1,5 +1,20 @@
 # @dschz/solid-highcharts
 
+## 0.2.0
+
+### Minor Changes
+
+- **🎨 Styling Improvements**:
+  - Added default `solid-highcharts` base class to support global styling.
+- **📚 Documentation Updates**:
+  - Updated Styling and Theming section with accurate base class examples
+  - Added dark mode styling patterns
+  - Fixed incorrect `.highcharts-container` references
+
+### Breaking Changes
+
+None. This is a non-breaking enhancement that adds styling capabilities.
+
 ## 0.1.2
 
 ### Patch Changes
