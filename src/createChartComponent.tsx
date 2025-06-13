@@ -3,6 +3,8 @@ import { createEffect, type JSX, mergeProps, onCleanup, onMount, splitProps } fr
 
 import type { HighchartsModule } from "./types";
 
+const baseClass = "solid-highcharts";
+
 /**
  * Supported Highcharts constructor types.
  * Each constructor type corresponds to a different chart variant.
@@ -10,6 +12,12 @@ import type { HighchartsModule } from "./types";
 export type HighchartsConstructor = "chart" | "stockChart" | "mapChart" | "ganttChart";
 
 type HighchartOptions = Highcharts.Options & {
+  /**
+   * Whether to animate the chart updates.
+   * If true, the chart will animate the updates.
+   * If false, the chart will not animate the updates.
+   * If an object, it will be passed to the Highcharts.Animation constructor.
+   */
   readonly animation?: boolean | Partial<AnimationOptionsObject>;
 };
 
@@ -114,24 +122,28 @@ export const createChartComponent = (
 
   return (props: HighchartsComponentProps) => {
     let container!: HTMLDivElement;
-    let chart!: Highcharts.Chart;
 
     const _props = mergeProps(
       {
-        style: {} as JSX.CSSProperties,
         animation: true,
       },
       props,
     );
 
-    const [local, options] = splitProps(_props, ["style", "class", "ref", "onCreateChart"]);
+    const [local, options] = splitProps(_props, [
+      "style",
+      "class",
+      "ref",
+      "animation",
+      "onCreateChart",
+    ]);
 
     onMount(() => {
       local.ref?.(container);
-      chart = HighchartsModule[constructor](container, options, local.onCreateChart);
+      const chart = HighchartsModule[constructor](container, options, local.onCreateChart);
 
       createEffect(() => {
-        chart.update(options, true, true, options.animation);
+        chart.update(options, true, true, local.animation);
       });
 
       onCleanup(() => {
@@ -139,6 +151,8 @@ export const createChartComponent = (
       });
     });
 
-    return <div ref={container} class={local.class} style={local.style} />;
+    const classes = () => (local.class ? `${baseClass} ${local.class}` : baseClass);
+
+    return <div ref={container} class={classes()} style={local.style} />;
   };
 };

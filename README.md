@@ -227,11 +227,20 @@ type HighchartsComponentProps = HighchartOptions & {
 
 ### CSS Styling
 
+All charts have a default `solid-highcharts` class that you can use for global styling:
+
 ```css
-/* Global chart container styles */
-.highcharts-container {
+/* Global chart styles */
+.solid-highcharts {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+/* Dark mode support */
+.dark .solid-highcharts {
+  background: #1a1a1a;
+  border-color: #333;
 }
 
 /* Custom chart class */
@@ -252,6 +261,16 @@ type HighchartsComponentProps = HighchartOptions & {
     height: 300px;
   }
 }
+```
+
+You can combine the base class with your custom classes:
+
+```tsx
+<Chart
+  class="my-chart chart-responsive"
+  title={{ text: "Styled Chart" }}
+  series={[{ type: "line", data: [1, 2, 3] }]}
+/>
 ```
 
 ### Highcharts Theming
@@ -278,6 +297,23 @@ Highcharts.setOptions({
 });
 
 const Chart = createChart(Highcharts);
+```
+
+### Framework Integration
+
+The base class works well with CSS frameworks:
+
+```css
+/* Tailwind-like utilities */
+.solid-highcharts {
+  @apply rounded-lg shadow-md bg-white dark:bg-gray-800;
+}
+
+/* CSS Modules */
+.chart {
+  composes: solid-highcharts;
+  /* Additional styles */
+}
 ```
 
 ## 📈 Performance Tips

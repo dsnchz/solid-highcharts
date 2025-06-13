@@ -115,23 +115,16 @@ describe("createChartComponent", () => {
   test("destroys the chart when unmounting", () => {
     const Chart = createChartComponent(MockHighchartsModule, "chart");
     let chartInstance!: Highcharts.Chart;
+    const onCreateChart = vi.fn((c) => {
+      chartInstance = c;
+    });
 
     const { container, unmount } = render(() => (
-      <Chart
-        {...defaultOptions}
-        ref={(c) => (ref = c)}
-        onCreateChart={(c) => {
-          chartInstance = c;
-        }}
-      />
+      <Chart {...defaultOptions} ref={(c) => (ref = c)} onCreateChart={onCreateChart} />
     ));
 
     expect(container).toBeInTheDocument();
-    expect(MockHighchartsModule.chart).toHaveBeenCalledWith(
-      ref,
-      defaultOptions,
-      expect.any(Function),
-    );
+    expect(MockHighchartsModule.chart).toHaveBeenCalledWith(ref, defaultOptions, onCreateChart);
 
     expect(chartInstance).toBeDefined();
 
